@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+/* Базовый размер интерфейса. rem-единицы Tailwind (шрифты И отступы) считаются
+   от html, поэтому одним значением масштабируется весь UI. Крупнее — комфортно
+   для врачей разного возраста. Уменьшить/увеличить интерфейс = поменять здесь
+   (напр. 19px, если 21px кажется слишком крупно). */
+html {
+  font-size: 21px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100;
+  /* размер шрифта наследуется от html (21px) */
+}
+
+/* Общие «мягкие» карточки клинической темы */
+.card {
+  @apply rounded-2xl bg-white shadow-soft dark:bg-slate-800 p-5;
+}
+
+.btn {
+  @apply rounded-xl px-4 py-2 font-medium transition disabled:opacity-50;
+}
+.btn-primary {
+  @apply btn bg-clinic-600 text-white hover:bg-clinic-700;
+}
+.btn-ghost {
+  @apply btn bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-100;
+}
+.input {
+  @apply w-full rounded-xl border border-slate-300 bg-white px-3 py-2 outline-none
+    focus:border-clinic-500 focus:ring-2 focus:ring-clinic-200
+    dark:border-slate-600 dark:bg-slate-800;
+}
+.label {
+  @apply mb-1 block text-sm font-medium text-slate-600 dark:text-slate-300;
+}
